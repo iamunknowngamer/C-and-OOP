@@ -51,7 +51,7 @@ int main(){
             }
         }
     else{
-        cout << "Program terminated";
+        cout << "Program terminated.";
         break;}
     }while(choice!=3);
 }
