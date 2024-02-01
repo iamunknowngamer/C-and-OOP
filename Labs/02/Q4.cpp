@@ -15,12 +15,11 @@ struct Student : Register {
 };
 
 int main(){
+    Student stud[1];
     
     int choice;
     do{
-    Student stud[1];
-    
-    cout<<"1.Add Data\n2.Display Data\n\n";
+    cout<<"\n\n1.Add Data\n2.Display Data\n3.Exit\n\n";
     cin>> choice;
     if (choice==1){
         for(int i=0; i<1 ; i++){
@@ -40,16 +39,19 @@ int main(){
             cin>>stud[i].email;
         }
     }
-    else if( choice == 2){
-        for(int j=0; j<1;j++){
-                cout<<stud[j].course_id<<endl;
-                cout<<stud[j].course_name<<endl;
-                cout<<stud[j].student_id<<endl;
-                cout<<stud[j].first_name<<endl;
-                cout<<stud[j].last_name<<endl;
-                cout<<stud[j].cell_no<<endl;
-                cout<<stud[j].email<<endl;
+    else if(choice == 2){
+        for(int i=0; i<1;i++){
+                cout<<stud[i].course_id<<endl;
+                cout<<stud[i].course_name<<endl;
+                cout<<stud[i].student_id<<endl;
+                cout<<stud[i].first_name<<endl;
+                cout<<stud[i].last_name<<endl;
+                cout<<stud[i].cell_no<<endl;
+                cout<<stud[i].email<<endl;
             }
-        }  
-    }while(choice!=0);
+        }
+    else{
+        cout << "Program terminated";
+        break;}
+    }while(choice!=3);
 }
