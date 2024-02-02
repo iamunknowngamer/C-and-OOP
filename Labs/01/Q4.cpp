@@ -20,3 +20,13 @@ int main(){
     area = count*max2;
     cout<< area;
 }
+
+// int main(){
+//     int result = 0, n = 9, arr[n] = {1,8,6,2,5,4,8,3,7};
+//     for(int i=0; i<n-1; i++){
+//         for(int j=i+1; j<n; j++){
+//             result = max(result, (j-i) * min(arr[i], arr[j]));
+//         }
+//     }
+//     cout<< result;
+// }
