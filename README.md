@@ -1,1 +1,1 @@
-# C-and-OOP
+# C++ and OOP
