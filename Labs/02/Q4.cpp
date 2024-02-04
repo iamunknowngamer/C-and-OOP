@@ -1,3 +1,8 @@
+/* 
+Name: Syed Saif ur Rehman Shah
+Roll number: 23k-0032
+*/
+
 #include <iostream>
 using namespace std;
 
@@ -15,14 +20,16 @@ struct Student : Register {
 };
 
 int main(){
-    Student stud[1];
+    int n=2;
+    Student stud[n];
     
     int choice;
     do{
     cout<<"\n\n1.Add Data\n2.Display Data\n3.Exit\n\n";
     cin>> choice;
     if (choice==1){
-        for(int i=0; i<1 ; i++){
+        for(int i=0; i<n ; i++){
+            cout<<"\nDetails for student "<<i+1<<":\n";
             cout<<"Enter the Course ID: ";
             cin>>stud[i].course_id;
             cout<<"\nEnter the Course Name: ";
@@ -40,18 +47,19 @@ int main(){
         }
     }
     else if(choice == 2){
-        for(int i=0; i<1;i++){
-                cout<<stud[i].course_id<<endl;
-                cout<<stud[i].course_name<<endl;
-                cout<<stud[i].student_id<<endl;
-                cout<<stud[i].first_name<<endl;
-                cout<<stud[i].last_name<<endl;
-                cout<<stud[i].cell_no<<endl;
-                cout<<stud[i].email<<endl;
+        for(int i=0; i<n;i++){
+                cout<<"\nData of student "<<i+1<<":\n";
+                cout<<"Course ID: "<<stud[i].course_id<<endl;
+                cout<<"Course Name: "<<stud[i].course_name<<endl;
+                cout<<"Student ID: "<<stud[i].student_id<<endl;
+                cout<<"First Name: "<<stud[i].first_name<<endl;
+                cout<<"Last Name: "<<stud[i].last_name<<endl;
+                cout<<"Cell Phone: "<<stud[i].cell_no<<endl;
+                cout<<"Email: "<<stud[i].email<<endl;
             }
         }
     else{
         cout << "Program terminated.";
-        break;}
+        exit;}
     }while(choice!=3);
 }
