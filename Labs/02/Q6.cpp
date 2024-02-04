@@ -1,12 +1,9 @@
 #include <iostream>
 using namespace std;
 
-int LCM(int a, int b){
-    int n=1;
-    if(a==b) return a;
-    else if(a>b) return LCM(a, b*n++);
-    else return LCM(a*n++, b);
-    
+int LCM(int a, int b, int n = 1){
+    if(n%a==0 && n%b==0) return n;
+    else return LCM(a,b,n+1);
 }
 
 int GCD(int a,int b){   
