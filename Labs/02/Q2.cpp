@@ -9,8 +9,8 @@ struct book{
 };
 
 int main(){
-    int n,total;
-    cout<<"How many books you want to register: "; cin>>n; total=n;
+    int n;
+    cout<<"How many books you want to register: "; cin>>n;
     book data[n];
     for(int i=0;i<n;i++){
         cout<<"\n-Adding details for book "<<i+1<<": ";
@@ -30,25 +30,27 @@ int main(){
         if(choice==1){
             int N;
             cout<<"How many books you wish to add: "; cin>>N;
-            total = n+N;
-            book data[total];
-            for(int i=n;i<total;i++){
+            book newdata[n+N];
+            for(int i=0;i<n;i++) newdata[i] = data[i];
+            for(int i=n;i<n+N;i++){
                 cout<<"\n-Adding details for new book "<<i+1<<": ";
                 cout<<"\nEnter the book title: "; 
-                cin>> data[i].title;
+                cin>> newdata[i].title;
                 cout<<"\nEnter the book author: ";
-                cin>> data[i].author;
+                cin>> newdata[i].author;
                 cout<<"\nEnter the year of publication: ";
-                cin>> data[i].year;
+                cin>> newdata[i].year;
                 cout<<"\nEnter the genre of book: ";
-                cin>> data[i].genre;
+                cin>> newdata[i].genre;
                 }
+            for(int i=0;i<n;i++) data[i] = newdata[i];
+            n+=N;
             }
-        else if(choice==2){
+        if(choice==2){
             int year;
             cout<<"Enter the year of the book, you want to update: ";
             cin>>year;
-            for(int i=0;i<total;i++){
+            for(int i=0;i<n;i++){
                 if(data[i].year==year){
                     cout<<"Updating details for book "<<i+1<<": \n";
                     cout<<"\nEnter The New Book Title: "; 
@@ -66,7 +68,7 @@ int main(){
             string temp;
             cout<<"\nEnter the (author/title) of the book you want to search for: "; cin>>temp;
             cout<<"Search complete(0.198 ms)--Matching results are: "<<endl;
-                for(int i=0;i<total;i++){
+                for(int i=0;i<n;i++){
                     if(data[i].title == temp || data[i].author == temp){
                         cout<<"\nSimilar Result "<<i+1<<":";
                         cout<<"\nBook title: "<<data[i].title;
