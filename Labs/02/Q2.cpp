@@ -4,22 +4,35 @@ using namespace std;
 struct book{
     string title;
     string author;
-    string year;
+    int year;
     string genre;
 };
 
 int main(){
-    int n;
-    cout<<"Enter the number of books you want to manage the data of: ";
-    cin>>n; 
-    int choice;
+    int n=2;
     book data[n];
+    for(int i=0;i<n;i++){
+        cout<<"\n-Adding details for book "<<i+1<<": ";
+        cout<<"\nEnter the book title: "; 
+        cin>> data[i].title;
+        cout<<"\nEnter the book author: ";
+        cin>> data[i].author;
+        cout<<"\nEnter the year of publication: ";
+        cin>> data[i].year;
+        cout<<"\nEnter the genre of book: ";
+        cin>> data[i].genre;
+    }
+    int choice;
     do{
-        cout<<"1.Add Data\n2.Search book by (author/title)\n3.Exit"<<endl;
+        cout<<"1.Add\n2.Update\n3.Search\n4.Exit"<<endl;
         cin>>choice;
         if(choice==1){
-            for(int i=0;i<n;i++){
-                cout<<"\n-Adding details for book "<<i+1<<": ";
+            int N;
+            cout<<"How many books you wish to add: "; cin>>N;
+            int total = n+N;
+            book data[total];
+            for(int i=n;i<total;i++){
+                cout<<"\n-Adding details for book "<<total-n+1<<": ";
                 cout<<"\nEnter the book title: "; 
                 cin>> data[i].title;
                 cout<<"\nEnter the book author: ";
@@ -31,6 +44,24 @@ int main(){
                 }
             }
         else if(choice==2){
+            int year;
+            cout<<"Enter the year of the book, you want to update: ";
+            cin>>year;
+            for(int i=0;i<n;i++){
+                if(data[i].year==year){
+                    cout<<"Updating details for book "<<i+1<<": \n";
+                    cout<<"\nEnter The New Book Title: "; 
+                    cin>> data[i].title;
+                    cout<<"\nEnter the book author: ";
+                    cin>> data[i].author;
+                    cout<<"\nEnter the year of publication: ";
+                    cin>> data[i].year;
+                    cout<<"\nEnter the genre of book: ";
+                    cin>> data[i].genre;
+                }
+            }
+        }
+        else if(choice==3){
             string temp;
             cout<<"\nEnter the (author/title) of the book you want to search for: "; cin>>temp;
             cout<<"Search complete(0.198 ms)--Matching results are: "<<endl;
@@ -44,9 +75,9 @@ int main(){
                     }
                 }
             }
-        else if(choice==3){
+        else if(choice==4){
             cout<<"Program Terminated.";
             exit;
             }
-    }while (choice!=3);
+    }while (choice!=4);
 }
