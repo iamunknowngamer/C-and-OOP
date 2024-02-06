@@ -9,7 +9,8 @@ struct book{
 };
 
 int main(){
-    int n=2;
+    int n,total;
+    cout<<"How many books you want to register: "; cin>>n; total=n;
     book data[n];
     for(int i=0;i<n;i++){
         cout<<"\n-Adding details for book "<<i+1<<": ";
@@ -29,10 +30,10 @@ int main(){
         if(choice==1){
             int N;
             cout<<"How many books you wish to add: "; cin>>N;
-            int total = n+N;
+            total = n+N;
             book data[total];
             for(int i=n;i<total;i++){
-                cout<<"\n-Adding details for book "<<total-n+1<<": ";
+                cout<<"\n-Adding details for new book "<<i+1<<": ";
                 cout<<"\nEnter the book title: "; 
                 cin>> data[i].title;
                 cout<<"\nEnter the book author: ";
@@ -47,7 +48,7 @@ int main(){
             int year;
             cout<<"Enter the year of the book, you want to update: ";
             cin>>year;
-            for(int i=0;i<n;i++){
+            for(int i=0;i<total;i++){
                 if(data[i].year==year){
                     cout<<"Updating details for book "<<i+1<<": \n";
                     cout<<"\nEnter The New Book Title: "; 
@@ -65,7 +66,7 @@ int main(){
             string temp;
             cout<<"\nEnter the (author/title) of the book you want to search for: "; cin>>temp;
             cout<<"Search complete(0.198 ms)--Matching results are: "<<endl;
-                for(int i=0;i<n;i++){
+                for(int i=0;i<total;i++){
                     if(data[i].title == temp || data[i].author == temp){
                         cout<<"\nSimilar Result "<<i+1<<":";
                         cout<<"\nBook title: "<<data[i].title;
