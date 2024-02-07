@@ -45,12 +45,13 @@ void find(product obj[], int n){
     cout<<"Search complete(0.198 ms)--Matching results are: "<<endl;
     for(int i=0;i<n;i++){
         if(obj[i].id == temp){
-            cout<<"\nSimilar Result "<<i+1<<":";
+            cout<<"\nSimilar Result - Product "<<i+1<<":";
             cout<<"\nProduct ID: "<<obj[i].id;
             cout<<"\nName: "<<obj[i].name;
             cout<<"\nPrice: "<<obj[i].price;
             cout<<"\nQuantity: "<<obj[i].quantity<<"\n\n";
         }
+        else cout<<"\nX------------------------------------------X";
     }
 }
 
