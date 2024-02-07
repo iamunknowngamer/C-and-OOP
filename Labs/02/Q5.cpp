@@ -51,7 +51,6 @@ void find(product obj[], int n){
             cout<<"\nPrice: "<<obj[i].price;
             cout<<"\nQuantity: "<<obj[i].quantity<<"\n\n";
         }
-        else cout<<"\nX------------------------------------------X";
     }
 }
 
