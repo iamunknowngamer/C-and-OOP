@@ -31,7 +31,7 @@ int main(){
             cout<<"How many books you wish to add: "; cin>>N;
             book data[n+N];
             for(int i=n;i<n+N;i++){
-                cout<<"\n-Adding details for new book "<<i+1<<": ";
+                cout<<"\n-Adding details for book "<<i+1<<": ";
                 cout<<"\nEnter the book title: "; 
                 cin>>data[i].title;
                 cout<<"\nEnter the book author: ";
