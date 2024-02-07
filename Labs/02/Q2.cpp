@@ -9,7 +9,7 @@ struct book{
 };
 
 int main(){
-    int n;
+    int n,N;
     cout<<"How many books you want to register: "; cin>>n;
     book data[n];
     for(int i=0;i<n;i++){
@@ -28,22 +28,19 @@ int main(){
         cout<<"1.Add\n2.Update\n3.Search\n4.Exit"<<endl;
         cin>>choice;
         if(choice==1){
-            int N;
             cout<<"How many books you wish to add: "; cin>>N;
-            book newdata[n+N];
-            for(int i=0;i<n;i++) newdata[i] = data[i];
+            book data[n+N];
             for(int i=n;i<n+N;i++){
                 cout<<"\n-Adding details for new book "<<i+1<<": ";
                 cout<<"\nEnter the book title: "; 
-                cin>> newdata[i].title;
+                cin>>data[i].title;
                 cout<<"\nEnter the book author: ";
-                cin>> newdata[i].author;
+                cin>>data[i].author;
                 cout<<"\nEnter the year of publication: ";
-                cin>> newdata[i].year;
+                cin>>data[i].year;
                 cout<<"\nEnter the genre of book: ";
-                cin>> newdata[i].genre;
+                cin>>data[i].genre;
                 }
-            for(int i=0;i<n;i++) data[i] = newdata[i];
             n+=N;
             }
         if(choice==2){
@@ -54,13 +51,13 @@ int main(){
                 if(data[i].year==year){
                     cout<<"Updating details for book "<<i+1<<": \n";
                     cout<<"\nEnter The New Book Title: "; 
-                    cin>> data[i].title;
+                    cin>>data[i].title;
                     cout<<"\nEnter the book author: ";
-                    cin>> data[i].author;
+                    cin>>data[i].author;
                     cout<<"\nEnter the year of publication: ";
-                    cin>> data[i].year;
+                    cin>>data[i].year;
                     cout<<"\nEnter the genre of book: ";
-                    cin>> data[i].genre;
+                    cin>>data[i].genre;
                 }
             }
         }
@@ -82,5 +79,5 @@ int main(){
             cout<<"Program Terminated.";
             exit;
             }
-    }while (choice!=4);
+    }while(choice!=4);
 }
