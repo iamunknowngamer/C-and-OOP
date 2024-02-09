@@ -1,79 +1,69 @@
+/*
+Name: Syed Saif ur Rehman Shah
+Roll No: 23k-0032
+*/
+
 #include <iostream>
-#include <string>
 using namespace std;
 
-class water_bottle{
-private:
+class WaterBottle{
     string company;
     string color;
-    double liters;
-    double ml;
+    float litres;
+    float millilitres;
 
 public:
-    void setCompany(const string &newCompany){
-        company =newCompany;
-    }
-    void setColor(const string &newColor){
-        color = newColor;
-    }
-    void setLiters(double newLitters){
-        liters = newLitters;
-        ml_to_l();
-    }
-    void set_ml(double newML){
-        ml = newML;
-        l_to_ml();
-    }
-    string getCompany() const{
-        return company;
-    }
-    string getColor() const{
-        return color;
-    }
-    double cliters() const{
-        return liters;
-    }
-    double cml() const{
-        return ml;
-    }
+void setCompany(string companyName){
+    company = companyName;
+}
+void setColor(string colour){
+    color = colour;
+}
+void setLiters(float Liter){
+    litres = Liter;
+}
+void setMililiters(float mls){
+    millilitres = mls; 
+} 
 
-    void consumeWater(double mlc){
-        ml -= mlc;
-        l_to_ml();
-    }
+string getcompany(){
+    return company;
+}
+string getcolor(){
+    return color;
+}
+float getlitres(){
+    return litres;
+}
+float getmls(){
+    return millilitres;
+}
 
-private:
+void update(float ml){
+    float update_litres, update_ml;
+    update_litres = ((getlitres()*1000) - ml)/1000;
+    update_ml = getmls() - ml;
+    cout<<"Litres after consumption: "<<update_litres<<endl;
+    cout<<"Milli Litres after consumption: "<<update_ml<<endl;
+}
 
-    void ml_to_l() {
-        ml = liters * 1000;
-    }
-
-    void l_to_ml() {
-        liters = ml / 1000;
-    }
 };
 
-int main() {
-    water_bottle myBottle;
+int main(){
 
-    myBottle.setCompany("ABC Company");
-    myBottle.setColor("Blue");
-    myBottle.setLiters(1.5); 
+    WaterBottle mybottle;
+    mybottle.setCompany("PepsiCola");
+    mybottle.setColor("Black");
+    mybottle.setLiters(1.5);
+    mybottle.setMililiters(1500);
 
-    cout << "Company: " << myBottle.getCompany() << endl;
-    cout << "Color: " << myBottle.getColor() << endl;
-    cout << "Capacity in Liters: " << myBottle.cliters() << " L" << endl;
-    cout << "Capacity in Milliliters: " << myBottle.cml() << " mL" << endl;
-
-    double mlc;
-    cout << "Enter the amount of water consumed in milliliters: ";
-    cin >> mlc;
-
-    myBottle.consumeWater(mlc);
-
-    cout << "Updated Capacity in Liters: " << myBottle.cliters() << " L" << endl;
-    cout << "Updated Capacity in Milliliters: " << myBottle.cml() << " mL" << endl;
-
-    return 0;
+    float ml;
+    cout<<"Company Name: "<<mybottle.getcompany()<<endl;
+    cout<<"Color: "<<mybottle.getcolor()<<endl;
+    cout<<"Capacity in litres: "<<mybottle.getlitres()<<" L"<<endl;
+    cout<<"Capacity in milli litres: "<<mybottle.getmls()<<" mL"<<endl;
+    cout<<"Enter the amount of drink consumed(ml): "; cin>>ml;
+    
+    mybottle.update(ml);
 }
 
