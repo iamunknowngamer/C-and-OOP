@@ -59,7 +59,7 @@ int main(){
 
     int choice;
     do{
-        cout<<"1.Add items\n2.Modify the prices of items\n3.Display list of items\n4.Generate Receipt\n5.Exit"<<endl;
+        cout<<"\n1.Add items\n2.Modify the prices of items\n3.Display list of items\n4.Generate Receipt\n5.Exit"<<endl;
         cin>>choice;
         if(choice==1){
             addition(data,count);
@@ -71,12 +71,12 @@ int main(){
             display(data,count);
         }
         else if(choice==4){
-            cout<<"The total is "<<generate_receipt(data,count);
+            // cout<<"The total is ";
+            cout<<generate_receipt(data,count)<<" is your total.";
         }
         else if(choice==5){
             cout<<"Program Terminated."<<endl;
             break;
         }
     }while(choice!=4);
-
 }
