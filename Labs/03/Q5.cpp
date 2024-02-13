@@ -9,9 +9,10 @@ class shop{
 
 void addition(shop data[], int &count){
     shop datainput;
-    cout<<"\nEnter the item name: ";
+    cout<<"Item "<<count+1<<"-";
+    cout<<"Enter the name: ";
     cin>>data[count].item;
-    cout<<"\nEnter the price: ";
+    cout<<"Enter the price: ";
     cin>>data[count].price;
     count++;
     return;
@@ -37,6 +38,16 @@ void display(shop data[], int count){
     }
 }
 
+float generate_receipt(shop data[], int count){
+    float receipt = 0; int quantity;
+    for(int i=0; i<count; i++){
+        cout<<"How many "<<data[i].item<<" you wish to buy: ";
+        cin>>quantity;
+        receipt += (quantity*data[i].price);
+    }
+    return receipt;
+}
+
 int main(){
 
     shop data[50];
@@ -48,7 +59,7 @@ int main(){
 
     int choice;
     do{
-        cout<<"1.Add items\n2.Modify the prices of items\n3.Display list of items\n4.Exit"<<endl;
+        cout<<"1.Add items\n2.Modify the prices of items\n3.Display list of items\n4.Generate Receipt\n5.Exit"<<endl;
         cin>>choice;
         if(choice==1){
             addition(data,count);
@@ -60,9 +71,12 @@ int main(){
             display(data,count);
         }
         else if(choice==4){
+            cout<<"The total is: "<<generate_receipt(data,count);
+        }
+        else if(choice==5){
             cout<<"Program Terminated."<<endl;
             break;
         }
     }while(choice!=4);
-    return 0;
+
 }
