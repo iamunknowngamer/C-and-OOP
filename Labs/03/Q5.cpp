@@ -9,7 +9,7 @@ class shop{
 
 void addition(shop data[], int &count){
     shop datainput;
-    cout<<"Item "<<count+1<<"-";
+    cout<<"Item "<<count+1<<" - ";
     cout<<"Enter the name: ";
     cin>>data[count].item;
     cout<<"Enter the price: ";
@@ -71,7 +71,7 @@ int main(){
             display(data,count);
         }
         else if(choice==4){
-            cout<<"The total is: "<<generate_receipt(data,count);
+            cout<<"The total is "<<generate_receipt(data,count);
         }
         else if(choice==5){
             cout<<"Program Terminated."<<endl;
