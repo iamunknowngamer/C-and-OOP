@@ -17,12 +17,15 @@ class BankAccount{
     
     void deposit(double deposit){
         balance += deposit;
-        cout<<"\ncurrent balance: "<<balance;
+        cout<<"\nCurrent balance: "<<balance;
     }
     
     void withdraw(double withdraw){
+        if(balance>0){
         balance -= withdraw;
-        cout<<"\ncurrent balance: "<<balance;
+        cout<<"\nCurrent balance: "<<balance;
+        }
+        else cout<<"\nInsufficient balance";
     }
     
     void display(int i){
