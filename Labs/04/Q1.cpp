@@ -31,8 +31,7 @@ class Book{
             }
             else {cout<<"progress saved.."; break;}
             if(track==total_pageCount) cout<<"read the whole book -- progress: "<<track<<"/"<<track;
-        }
-        
+        } 
     }
 };
 
