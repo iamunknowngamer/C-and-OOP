@@ -11,6 +11,7 @@ class Book{
     int track;
 
     public:
+    Book();
     Book(string name, string a, string n, int total, int track){
         this->name = name;
         author = a;
@@ -36,7 +37,7 @@ class Book{
 };
 
 int main(){
-    Book b1("xyz","abc","ib321-754",10,0);
+    Book b1("xyz","abc","ib321-754",5,0);
     b1.progress();
     // b1.display();
 }
