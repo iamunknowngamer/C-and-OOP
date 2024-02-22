@@ -11,13 +11,13 @@ class Book{
     int track;
 
     public:
-    Book();
+    Book(){};
     Book(string name, string a, string n, int total, int track){
         this->name = name;
         author = a;
         isbn_number = n;
         total_pageCount = total;
-        track = track;
+        this->track = track;
     }
     // // void display(){
     // //     cout<<name<<endl<<author<<endl<<isbn_number<<endl<<total_pageCount<<endl<<track<<endl;
