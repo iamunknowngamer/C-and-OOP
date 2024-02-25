@@ -38,37 +38,33 @@ class Pet{
         return this->happinessLevel;
     }
     string getskills(){
-        string skills[specialSkills.size()];
+        string skills;
         for(int i=0; i<specialSkills.size(); i++){
-            skills[i] = specialSkills[i];
+            skills += specialSkills[i] + "\n-";
         }
-        for(int i=0; i<specialSkills.size(); i++){
-            cout<<skills[i]<<" / ";
-        }
-        return 0;
-    }
+        return skills;
+    }   
+
     void displayPetDetails(int &count, int i){
         cout<<"\nDetails of Pet "<<i+1<<": "<<endl;
         cout<<"Pet Name: "<<name<<endl;
         cout<<"Health Status: "<<healthStatus<<endl;
         cout<<"Hunger Level: "<<hungerLevel<<endl;
         cout<<"Happiness Level: "<<happinessLevel<<endl;
-        cout<<"Special Skills: ";
+        cout<<"Special Skills: "<<endl;
         for(int j=0; j<specialSkills.size(); j++){
-            cout<<specialSkills[j]<<" ";
-        } cout<<endl;
+            cout<<"-"<<specialSkills[j]<<endl;
+        }
     }
     void updateHappiness(){
         if(happinessLevel>10) this->happinessLevel=10;
         else if(happinessLevel<1) this->happinessLevel=1;
-        else{
-            if(happinessLevel!=10){
-                if(feed){
-                    this->happinessLevel=happinessLevel+1;
-                        cout<<"Previous Happiness Level: "<<happinessLevel--<<"\nUpdated Happiness Level: "<<happinessLevel;
-                } else if(happinessLevel<10) cout<<"Previous Happiness Level: "<<happinessLevel<<"\nUpdated Happiness Level: "<<happinessLevel--;
-            } else  cout<<"The pet already haves the max happiness level "<<happinessLevel;
-        }
+        if(happinessLevel!=10){
+            if(feed){
+                this->happinessLevel=happinessLevel+1;
+                cout<<"Previous Happiness Level: "<<happinessLevel-1<<"\nUpdated Happiness Level: "<<happinessLevel<<endl;
+            } else cout<<"Previous Happiness Level: "<<happinessLevel<<"\nUpdated Happiness Level: "<<happinessLevel-1<<endl;
+        } else cout<<"The pet already haves the max happiness level "<<happinessLevel<<endl;
     }   
     void updateHealth(){
             cout<<"Previous Health Status: "<<healthStatus;
@@ -76,14 +72,14 @@ class Pet{
             healthStatus="Good";
             if(happinessLevel>=7 && hungerLevel<=5) healthStatus="Perfect";
         } else healthStatus="Sick";
-            cout<<"\nUpdated Health Status: "<<healthStatus;
+            cout<<"\nUpdated Health Status: "<<healthStatus<<endl;
     }
     void updateHunger(){
         if(hungerLevel>10) this->hungerLevel=10;
         else if(hungerLevel<1) this->hungerLevel=1;
         else{
             this->hungerLevel=hungerLevel-1; feed=true;
-            cout<<"The pet was fed.\nPrevious Hunger Level: "<<hungerLevel+1<<"\nUpdated Hunger Level: "<<hungerLevel;
+            cout<<"The pet was fed.\nPrevious Hunger Level: "<<hungerLevel+1<<"\nUpdated Hunger Level: "<<hungerLevel<<endl;
         }
     }
 };
@@ -99,27 +95,27 @@ class Adopter{
     adopterName(adopterName), adopterMobileNum(adopterMobileNum){}
 
     void adoptPet(Pet pet[], int &count){
-        int temp; cout<<"\nHow many pets you wish to adopt: "; cin>>temp; string tempname[temp]; bool flag=false;
-        for(int i=0; i<temp; i++){
-            cout<<"\nEnter the name of the pet "<<i+1<<": "; cin>>tempname[i];
-            for(int j=0; j<count; j++){
-                if(tempname[i]==pet[j].getname()){
-                    adoptedPetRecords.push_back(tempname[i]);
-                    cout<<"\nAdopted the pet "<<tempname[i]<<" successfully";
-                    flag=true;
-                }
+        string tempname; bool flag=false;
+        cout<<"\nEnter the name of the pet: "; cin>>tempname;
+        for(int j=0; j<count; j++){
+            if(tempname==pet[j].getname()){
+                adoptedPetRecords.push_back(tempname);
+                cout<<"\nAdopted the pet "<<tempname<<" successfully"<<endl;
+                flag=true;
             }
-            if(!flag) cout<<"\nPet named "<<tempname[i]<<" not found";
         }
+        if(!flag) cout<<"\nPet named "<<tempname<<" not found"<<endl;
     }
     void returnPet(){
         string tempname; cout<<"\nEnter the name of the pet you want to return: "; cin>>tempname;
         for(int i=0; i<adoptedPetRecords.size(); i++){
             if(tempname==adoptedPetRecords[i]){
                 adoptedPetRecords[i] = "";
-                cout<<"\nPet returned successfully";
+                cout<<"\nAdopter's Name: "<<adopterName;
+                cout<<"\nAdopter's Cell no: "<<adopterMobileNum;
+                cout<<"\nPet returned successfully"<<endl;
             }
-            else cout<<"\nNo such pet was found in the record of adopted pets, the pet can't be returned";
+            else cout<<"\nNo such pet was found in the record of adopted pets, the pet can't be returned"<<endl;
         }
     }
     void displayAdoptedPets(Pet pet[], int &count){
@@ -127,8 +123,6 @@ class Adopter{
             for(int j=0; j<count; j++){
                 if(adoptedPetRecords[i]==pet[j].getname()){
                     cout<<"\nDetails of Pet "<<i+1<<": "<<endl;
-                    cout<<"Adopter's Name: "<<adopterName<<endl;
-                    cout<<"Adopter's Cell no: "<<adopterMobileNum<<endl;
                     cout<<"Pet Name: "<<pet[j].getname()<<endl;
                     cout<<"Health Status: "<<pet[j].gethealth()<<endl;
                     cout<<"Hunger Level: "<<pet[j].gethunger()<<endl;
