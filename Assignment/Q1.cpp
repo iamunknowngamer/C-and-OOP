@@ -40,7 +40,7 @@ class Pet{
     string getskills(){
         string skills;
         for(int i=0; i<specialSkills.size(); i++){
-            skills += specialSkills[i] + "\n-";
+            skills += specialSkills[i] + "\n";
         }
         return skills;
     }   
@@ -122,12 +122,12 @@ class Adopter{
         for(int i=0; i<adoptedPetRecords.size(); i++){
             for(int j=0; j<count; j++){
                 if(adoptedPetRecords[i]==pet[j].getname()){
-                    cout<<"\nDetails of Pet "<<i+1<<": "<<endl;
+                    cout<<"\nDetails of Pet "<<j+1<<": "<<endl;
                     cout<<"Pet Name: "<<pet[j].getname()<<endl;
                     cout<<"Health Status: "<<pet[j].gethealth()<<endl;
                     cout<<"Hunger Level: "<<pet[j].gethunger()<<endl;
                     cout<<"Happiness Level: "<<pet[j].gethappiness()<<endl;
-                    cout<<"Special Skills: "<<pet[j].getskills()<<endl;
+                    cout<<"Special Skills: \n"<<pet[j].getskills()<<endl;
                 }
             }
         }
@@ -135,6 +135,7 @@ class Adopter{
 };
 
 int main(){
+    cout<<"[Credits: Syed Saif ur Rehman Shah (23k-0032)]"<<endl;
     Pet pet[5]; int count=1;
     Adopter adopt;
     string choice;
@@ -147,7 +148,7 @@ int main(){
             cout<<"Enter the Health Status(Perfect/Good/Sick): "; cin>>health;
             cout<<"Enter the Happiness Level(1-10): "; cin>>happiness;
             cout<<"Enter the Hunger Level(1-10): "; cin>>hunger;
-            pet[count] = Pet(name, health, happiness, hunger);
+            pet[count] = Pet(name, health, hunger, happiness);
             pet[count].setskills();
             count++;
         }
