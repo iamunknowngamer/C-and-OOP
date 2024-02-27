@@ -102,14 +102,15 @@ public:
             cout << i + 1 << " ";
             for(int j=0; j<8; j++){
                 if ((i + j)%2 == 0){
-                    cout<<"\x1b[48;5;250m"; 
-                } else cout<<"\x1b[48;5;235m"; 
+                    cout<<"\x1b[48;5;250m"; // white background color
+                } else cout<<"\x1b[48;5;235m"; // black background color
 
+                //color to set for either pieces according to background color
                 if(boardPieces[i][j].getPieceColor() == "white"){
-                    cout << "\x1b[97m"; 
+                    cout << "\x1b[97m";
                 } 
                 else if(boardPieces[i][j].getPieceColor() == "black"){
-                    cout << "\x1b[30m"; 
+                    cout << "\x1b[30m";
                 }
                 cout<<" "<<boardPieces[i][j].getPieceSymbol()<<" \x1b[0m";
             }
@@ -132,4 +133,3 @@ int main(){
     chess.movePiece("b7", "c5");
    
 }
-
