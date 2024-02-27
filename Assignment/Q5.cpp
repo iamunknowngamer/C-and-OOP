@@ -83,7 +83,7 @@ public:
         }
     }
     bool isValidDiscount(BOGO_Coupon &offer, string discount){
-         discount.substr(0, 2) == offer.getDinerCode().substr(0, 2);
+        return discount.substr(0, 2) == offer.getDinerCode().substr(0, 2);
     }
     bool redeemDiscount(string redeemDiscount){
         for(int i=0; i<discountCounter; i++){
@@ -113,4 +113,3 @@ int main(){
     c2.accumulateCoupon();
     return 0;
 }
-
