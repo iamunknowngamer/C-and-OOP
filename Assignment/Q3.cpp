@@ -102,14 +102,14 @@ public:
             cout << i + 1 << " ";
             for(int j=0; j<8; j++){
                 if ((i + j)%2 == 0){
-                    cout<<"\x1b[48;5;250m"; // White background 
-                } else cout<<"\x1b[48;5;235m"; // Black background
+                    cout<<"\x1b[48;5;250m"; 
+                } else cout<<"\x1b[48;5;235m"; 
 
                 if(boardPieces[i][j].getPieceColor() == "white"){
-                    cout << "\x1b[97m"; // White piece color
+                    cout << "\x1b[97m"; 
                 } 
                 else if(boardPieces[i][j].getPieceColor() == "black"){
-                    cout << "\x1b[30m"; // Black piece color
+                    cout << "\x1b[30m"; 
                 }
                 cout<<" "<<boardPieces[i][j].getPieceSymbol()<<" \x1b[0m";
             }
