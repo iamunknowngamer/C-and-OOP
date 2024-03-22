@@ -66,7 +66,7 @@ int main(){
     c2.course_code = "MT-4002";
     c2.credit_hour = 3;
 
-    Student s1("123", "Abdul Rahman Azam");
+    Student s1("123", "Saif");
     s1.enroll(c1);
     s1.enroll(c2);
 
