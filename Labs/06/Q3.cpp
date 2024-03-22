@@ -43,7 +43,7 @@ int appointment::total_earning = 0;
  
 int main(){
     
-    appointment a("Abdul Rahman Azam", 6000), b("Abdul Basit", 1000), c("Paaji", 4000);
+    appointment a("Saif", 6000), b("Shah", 1000), c("Syed", 4000);
     
     cout << "Average Cost = " << appointment::avgcost() << endl
     << "Total earning = " << appointment::gettotal_earning() << endl
