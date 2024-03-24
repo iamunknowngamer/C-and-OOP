@@ -29,7 +29,7 @@ class FictionBook : public Book{
     void display(){
         Book::display();
         cout << "Genre = " << genre
-        << "\nProtagonsit = " << protagonist << endl;
+        << "\nProtagonist = " << protagonist << endl;
     }
 };
 
