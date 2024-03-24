@@ -58,7 +58,7 @@ public:
 };
 
 int main() {
-    Character character("Hero", 0, 0, 0, 100);
+    Character character("Tomo-chan", 0, 0, 0, 100);
 
     character.displayCharacter();
 
