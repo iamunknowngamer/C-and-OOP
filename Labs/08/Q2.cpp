@@ -53,7 +53,7 @@ public:
 };
 
 int main() {
-    Wizard wiz(10, 5, 20, "Hello");
+    Wizard wiz(10, 5, 20, "Rasengun");
     wiz.display();
 
     return 0;
