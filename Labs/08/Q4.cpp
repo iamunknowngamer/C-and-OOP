@@ -50,14 +50,17 @@ public:
         : Person(name, age), Student(name, age, studentId, gradeLevel), Teacher(name, age, subject, room) {}
 
     void display(){
+        cout<<"---Person Display---"<<endl;
         Person::display();
+        cout<<"---Student Display---"<<endl;
         Student::display();
+        cout<<"---Teacher Display---"<<endl;
         Teacher::display();
     }
 };
 
 int main(){
-    GraduateStudent gradStudent("John Doe", 25, 12345, 12, "Math", 101);
+    GraduateStudent gradStudent("Saif", 17, 230032, 13, "OOP", 101);
     gradStudent.display();
 
     return 0;
