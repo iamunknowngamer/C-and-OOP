@@ -14,6 +14,7 @@ class Circle : public Shape{
     double radius;
 
     public:
+    Circle(){}
     Circle(double r):radius(r){}
     virtual double area() const override{return 3.14*radius*radius;}
     virtual double perimeter() const override{return 2*3.14*radius;};
@@ -80,7 +81,7 @@ private:
 class EquilateralTriangle : public Triangle{
     public:
     EquilateralTriangle(double side):Triangle(side, side ,side){} 
-    virtual double area() const override{
+    virtual void Display() const override{
         cout<<"Properties of Equilateral Triangle:"<<endl;
         cout<<"- Area: "<<area()<<endl;
         cout<<"- Perimeter: "<<perimeter()<<endl;
@@ -88,6 +89,8 @@ class EquilateralTriangle : public Triangle{
 };
 
 int main(){
+
+    Shape* shape;
     cout<<"Welcome to the Geometry Competition Calculator!"<<endl<<endl;
     int choice;
     do{
@@ -98,6 +101,10 @@ int main(){
         case 1:
             double r;
             cout<<"Enter the radius of the circle: "; cin>>r;
+            shape = new Circle(r);
+            shape->area();
+            shape->perimeter();
+            shape->Display();
             break;
         default:
             break;
