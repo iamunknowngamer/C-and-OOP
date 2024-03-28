@@ -71,10 +71,36 @@ private:
         return sqrt(temp*((temp-side1)*(temp-side2)*(temp-side3)));
     }
     virtual void Display() const override{
-        cout<<"Properties of the Triangle:"<<endl;
-        cout<<"- Area: "<<area() <<endl;
+        cout<<"Properties of Triangle:"<<endl;
+        cout<<"- Area: "<<area()<<endl;
         cout<<"- Perimeter: "<<perimeter()<<endl;
     }
 };
 
+class EquilateralTriangle : public Triangle{
+    public:
+    EquilateralTriangle(double side):Triangle(side, side ,side){} 
+    virtual double area() const override{
+        cout<<"Properties of Equilateral Triangle:"<<endl;
+        cout<<"- Area: "<<area()<<endl;
+        cout<<"- Perimeter: "<<perimeter()<<endl;
+    }
+};
 
+int main(){
+    cout<<"Welcome to the Geometry Competition Calculator!"<<endl<<endl;
+    int choice;
+    do{
+        cout<<"Please select a shape:\n1. Circle\n2. Rectangle\n3. Square\n4. Triangle\n 5. Exit\nEnter your choice: "; 
+        cin>>choice;
+        
+        switch(choice){
+        case 1:
+            
+            break;
+        
+        default:
+            break;
+        }
+    }while(choice!=5);
+}
