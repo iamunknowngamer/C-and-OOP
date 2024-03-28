@@ -96,9 +96,9 @@ int main(){
         
         switch(choice){
         case 1:
-            
+            double r;
+            cout<<"Enter the radius of the circle: "; cin>>r;
             break;
-        
         default:
             break;
         }
