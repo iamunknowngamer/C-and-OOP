@@ -94,7 +94,7 @@ int main(){
     cout<<"Welcome to the Geometry Competition Calculator!"<<endl<<endl;
     int choice;
     do{
-        cout<<"Please select a shape:\n1. Circle\n2. Rectangle\n3. Square\n4. Triangle\n 5. Exit\nEnter your choice: "; 
+        cout<<"Please select a shape:\n1. Circle\n2. Rectangle\n3. Square\n4. Triangle\n5. Exit\nEnter your choice: "; 
         cin>>choice;
         
         switch(choice){
@@ -106,7 +106,43 @@ int main(){
             shape->perimeter();
             shape->Display();
             break;
+        case 2:
+            double len ,width;
+            cout<<"Enter the length of the rectangle: "; cin>>len;
+            cout<<"Enter the width of the rectangle: "; cin>>width;
+            shape = new Rectangle(len, width);
+            shape->area();
+            shape->perimeter();
+            shape->Display();
+            break;
+        case 3:
+            double l;
+            cout<<"Enter the length of the square: "; cin>>l;
+            shape = new Square(l);
+            shape->area();
+            shape->perimeter();
+            shape->Display();
+            break;
+        case 4:
+            double s1,s2,s3;
+            cout<<"Enter the length of three sides of the triangle: "; cin>>s1;cin>>s2;cin>>s3;
+            if(s1==s2==s3){
+                shape = new EquilateralTriangle(s1);
+                shape->area();
+                shape->perimeter();
+                shape->Display();
+            }
+            else{
+                shape = new Triangle(s1,s2,s3);
+                shape->area();
+                shape->perimeter();
+                shape->Display();
+            }
+            break;
+        case 5:
+            cout<<"Program Terminated."; exit (1);
         default:
+            cout<<"Invalid Choice!\n";
             break;
         }
     }while(choice!=5);
