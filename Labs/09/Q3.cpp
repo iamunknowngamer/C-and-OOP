@@ -55,7 +55,7 @@ int main(){
     cout<<"Full Time Employee Details:"<<endl;
     full.displayDetails();
 
-    cout<<"Part Time Employee Details:"<<endl;
+    cout<<"\nPart Time Employee Details:"<<endl;
     part.displayDetails();
 
     Employee* emp1 = &full;
