@@ -20,13 +20,13 @@ int main() {
     double Radius = 3;
     cout<<"Radius of Circle: "<<Radius<<endl;
     cout<<"Area: "<<shape.area(Radius)<<endl;
-    cout<<"Perimeter: "<<shape.perimeter(Radius)<<endl;
+    cout<<"Perimeter: "<<shape.perimeter(Radius)<<endl<<endl;
 
     int Length = 4;
     int Width = 5;
     cout<<"Length of Rectangle: "<<Length<<", Width of Rectangle: "<<Width<<endl;
     cout<<"Area: "<<shape.area(Length, Width)<<endl;
-    cout<<"Perimeter: "<<shape.perimeter(Length, Width)<<endl;
+    cout<<"Perimeter: "<<shape.perimeter(Length, Width)<<endl<<endl;
 
     double Base = 6;
     double Height = 7;
