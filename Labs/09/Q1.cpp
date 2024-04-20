@@ -17,21 +17,21 @@ public:
 int main() {
     Shape shape;
 
-    double Radius = 5.0;
+    double Radius = 3;
     cout<<"Radius of Circle: "<<Radius<<endl;
     cout<<"Area: "<<shape.area(Radius)<<endl;
     cout<<"Perimeter: "<<shape.perimeter(Radius)<<endl;
 
-    int Length = 6;
-    int Width = 4;
+    int Length = 4;
+    int Width = 5;
     cout<<"Length of Rectangle: "<<Length<<", Width of Rectangle: "<<Width<<endl;
     cout<<"Area: "<<shape.area(Length, Width)<<endl;
     cout<<"Perimeter: "<<shape.perimeter(Length, Width)<<endl;
 
-    double Base = 7.0;
-    double Height = 3.0;
-    double Side1 = 5.0;
-    double Side2 = 6.0;
+    double Base = 6;
+    double Height = 7;
+    double Side1 = 8;
+    double Side2 = 9;
     cout<<"Base of triangle "<<Base<<", Height of triangle: "<<Height<<endl;
     cout<<"Area: "<<shape.area(Base, Height)<<endl;
     cout<<"Perimeter: "<<shape.perimeter(Side1, Side2, Base)<<endl;
