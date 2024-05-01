@@ -1,6 +1,6 @@
 /*
                     Two Player Chess Game
-                    Forged by : Syed Saif Ur Rehman Shah (23k-0032), Sajid Ali ()
+                    Forged by : Syed Saif Ur Rehman Shah (23k-0032), Sajid Ali (23k-0077)
 */
 
 #include<iostream>
