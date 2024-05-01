@@ -1,4 +1,3 @@
-
 /*
             Two Player Chess Game
             Renovated by : Syed Saif ur Rehman Shah (23k-0032), Sajid Ali (23k-0077)
