@@ -1,7 +1,6 @@
 /*
-Two player game of chess
-made by saif ur rehman
-work in progress..
+                    Two Player Chess Game
+                    Forged by : Syed Saif Ur Rehman Shah (23k-0032), Sajid Ali ()
 */
 
 #include<iostream>
