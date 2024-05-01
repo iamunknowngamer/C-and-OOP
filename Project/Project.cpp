@@ -1,13 +1,14 @@
+
 /*
-                    Two Player Chess Game
-                    Forged by : Syed Saif Ur Rehman Shah (23k-0032), Sajid Ali (23k-0077)
+            Two Player Chess Game
+            Renovated by : Syed Saif ur Rehman Shah (23k-0032), Sajid Ali (23k-0077)
 */
 
 #include<iostream>
 #include<cstring> //header to use memset function
 #include<iomanip>
 #include<string>
-#include<windows.h> //header to change text color of the OP text
+#include<windows.h> //header for optimizing colors
 #include<limits> 
 #define N 8
 using namespace std;
@@ -37,9 +38,9 @@ class ChessGame
         changeColor(11);
         cout<<"\n\t\t\t TWO PLAYER CHESS GAME \n";
         changeColor(12);
-        cout<<"\n   red -> ";changeColor(7);cout<<" BLACK COINS";
+        cout<<"\n   Red ->";changeColor(7);cout<<" BLACK COINS";
         changeColor(14);
-        cout<<"\n   yellow -> ";changeColor(7);cout<<" WHITE COINS";
+        cout<<"\n   Yellow ->";changeColor(7);cout<<" WHITE COINS";
         changeColor(7);
         cout<<"\n\n   ";
     }
@@ -1766,6 +1767,7 @@ bool ChessGame::check_knightmove(int i, int j,int flag)
            return true;
         }
     }
+    return false;
 }
 
 //function to check if a king can defeat opponent king or not(CHECK condition)
